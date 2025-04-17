@@ -51,10 +51,10 @@ public class NoonTestNG {
 
     @Test(priority = 2)
     public void EmailAndPassword() {
-        driver.findElement(By.xpath("//input[@id='emailInput']")).sendKeys("saherhamada97@gmail.com");
+        driver.findElement(By.xpath("//input[@id='emailInput']")).sendKeys(//username or email);
         driver.findElement(By.xpath("//p[contains(text(),'Continue')]")).click();
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(text(),'Log in with password')]"))).click();
-        driver.findElement(By.xpath("//input[@id='password']")).sendKeys("2581997saher");
+        driver.findElement(By.xpath("//input[@id='password']")).sendKeys(//password);
     }
 
     @Test(priority = 3)

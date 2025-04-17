@@ -132,6 +132,15 @@ public class NoonTestNG {
         checkoutButton.click();
     }
 
+     @AfterMethod
+    public void failedScreenshots (ITestResult result) throws IOException {
+        if (ITestResult.FAILURE == result.getStatus())
+        {
+            TakesScreenshot ts = (TakesScreenshot) driver;
+            File source = ts.getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(source, new File ("C:\\FailedTest" + result.getName()+".png"));
+        }
+
 
 
 
